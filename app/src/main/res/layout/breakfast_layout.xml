@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/bkfMenu"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Menu List"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/bkfArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/bkfMenu"
+            android:layout_toRightOf="@id/bkfMenu"
+            android:src="@drawable/ic_arrow_right"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/bkfQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bkfMenu"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/bkf_question"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <CheckBox
+            android:id="@+id/bkfCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bkfQuestion"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/bkf_checkbox"
+            android:textSize="15sp"
+            android:textColor="@color/colorDarkGrey"/>
+
+        <Button
+            android:id="@+id/bkfIncreaseBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/bkfQuestion"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorGold"
+            android:gravity="center"
+            android:text="@string/increase_button"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/bkfCounterTextView"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/bkfQuestion"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/bkfIncreaseBtn"
+            android:layout_toStartOf="@id/bkfIncreaseBtn"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/bkfDecreaseBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/bkfQuestion"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/bkfCounterTextView"
+            android:layout_toStartOf="@id/bkfCounterTextView"
+            android:background="@color/colorGold"
+            android:gravity="center"
+            android:text="@string/decrease_button"
+            android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

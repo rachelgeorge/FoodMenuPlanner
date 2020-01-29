@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">FoodMenuPlanner</string>
+    <string name="shopping_list_button">Shopping List</string>
+    <string name="veg_switch">Veg Only</string>
+    <string name="calendar_instruction">Swipe left for more dates</string>
+    <string name="bkf_text_view">Breakfast</string>
+    <string name="hide_bkf_text_view">Hide Breakfast</string>
+    <string name="bkf_question">How many eating?</string>
+    <string name="bkf_checkbox">Add to List</string>
+    <string name="increase_button">+</string>
+    <string name="decrease_button">-</string>
+
+    <string-array name="breakfast_meals">
+        <item>Scrambled eggs</item>
+        <item>Aloo Paratha</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

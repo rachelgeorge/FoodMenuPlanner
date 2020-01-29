@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGrey"
+    tools:context=".MainActivity">
+
+    //toolbar on top
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/appToolbar"
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/shoppingListBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/shopping_list_button"
+                android:textColor="@color/colorWhite"
+                android:layout_alignParentStart="true" />
+
+                <Switch
+                    android:id="@+id/vegSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/filterBtn"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@id/filterBtn"
+                    android:layout_marginTop="8dp"
+                    android:switchPadding="5dp"
+                    android:text="@string/veg_switch" />
+
+                <ImageButton
+                    android:id="@+id/filterBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/filter_icon" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    //horizontal calendar below toolbar
+    <devs.mulham.horizontalcalendar.HorizontalCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appToolbar"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite"
+        app:textColorNormal="@color/colorBlack"
+        app:textColorSelected="@color/colorPurple"/>
+
+    <TextView
+        android:id="@+id/calendarInstructionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendarView"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="0dp"
+        android:paddingBottom="5dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:text="@string/calendar_instruction"
+        android:textColor="@color/colorDarkGrey"/>
+
+    //Breakfast menu section
+    <TextView
+        android:id="@+id/bkfTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendarInstructionTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/bkf_text_view"
+        android:textColor="@color/colorBlack"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/hideBkfTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendarInstructionTextView"
+        android:layout_marginStart="182dp"
+        android:layout_marginLeft="182dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@id/bkfTextView"
+        android:layout_toRightOf="@id/bkfTextView"
+        android:text="@string/hide_bkf_text_view"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp"
+        android:clickable="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bkfRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bkfTextView"
+        android:layout_margin="10dp"/>
+
+</RelativeLayout>
