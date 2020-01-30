@@ -19,6 +19,7 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
     //variables
     private ArrayList<BreakfastMenu> mBreakfastList;
     private OnItemClickListener bkfListener;
+    private final int limit = 2;
 
     //get the info from the array list (in Main Activity) to put into the adapter
     //pass it into the constructor for the adapter
@@ -42,7 +43,7 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
         public Button bkfIncreaseBtn;
         public TextView bkfCounterTextView;
         public Button bkfDecreaseBtn;
-        public int minteger = 0;
+        public int mInteger = 0;
 
         public BreakfastViewHolder(@NonNull final View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -109,17 +110,17 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
             bkfIncreaseBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    minteger = minteger + 1;
-                    bkfCounterTextView.setText("" + minteger);
+                    mInteger = mInteger + 1;
+                    bkfCounterTextView.setText("" + mInteger);
                 }
             });
 
             bkfDecreaseBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (minteger > 0) {
-                        minteger = minteger - 1;
-                        bkfCounterTextView.setText("" + minteger);
+                    if (mInteger > 0) {
+                        mInteger = mInteger - 1;
+                        bkfCounterTextView.setText("" + mInteger);
                     } else {
                         bkfCounterTextView.setText("" + 0);
                     }
@@ -140,7 +141,6 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
     @Override
     public BreakfastViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
          View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.breakfast_layout, parent, false);
-         //BreakfastViewHolder bkfvh = new BreakfastViewHolder(view, bkfListener);
          return new BreakfastViewHolder(view, bkfListener);
     }
 
@@ -152,7 +152,12 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
 
     @Override
     public int getItemCount() {
-         return mBreakfastList.size(); /* number of items in the array list */
+        if (mBreakfastList.size() > limit) {
+            return limit; /* so only 2 options show per card */
+        } else {
+            return mBreakfastList.size(); /* number of items in the array list */
+        }
+
     }
 
 }

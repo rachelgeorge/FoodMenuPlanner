@@ -10,7 +10,7 @@
         android:layout_margin="5dp">
 
         <TextView
-            android:id="@+id/bkfMenu"
+            android:id="@+id/lunchMenu"
             android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -21,18 +21,18 @@
             android:textSize="20sp"/>
 
         <ImageView
-            android:id="@+id/bkfArrow"
+            android:id="@+id/lunchArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/bkfMenu"
-            android:layout_toRightOf="@id/bkfMenu"
-            android:src="@drawable/ic_arrow_right" />
+            android:layout_toEndOf="@id/lunchMenu"
+            android:layout_toRightOf="@id/lunchMenu"
+            android:src="@drawable/ic_arrow_right"/>
 
         <TextView
-            android:id="@+id/bkfQuestion"
+            android:id="@+id/lunchQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bkfMenu"
+            android:layout_below="@id/lunchMenu"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
@@ -43,10 +43,10 @@
             android:textSize="15sp" />
 
         <CheckBox
-            android:id="@+id/bkfCheckBox"
+            android:id="@+id/lunchCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bkfQuestion"
+            android:layout_below="@id/lunchQuestion"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="5dp"
@@ -57,10 +57,10 @@
             android:textColor="@color/colorDarkGrey"/>
 
         <Button
-            android:id="@+id/bkfIncreaseBtn"
+            android:id="@+id/lunchIncreaseBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_below="@id/bkfQuestion"
+            android:layout_below="@id/lunchQuestion"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="4dp"
@@ -73,30 +73,30 @@
             android:textColor="@color/colorWhite" />
 
         <TextView
-            android:id="@+id/bkfCounterTextView"
+            android:id="@+id/lunchCounterTextView"
             android:layout_width="35dp"
             android:layout_height="25dp"
-            android:layout_below="@id/bkfQuestion"
+            android:layout_below="@id/lunchQuestion"
             android:layout_marginTop="4dp"
             android:layout_marginRight="2dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="10dp"
-            android:layout_toLeftOf="@id/bkfIncreaseBtn"
-            android:layout_toStartOf="@id/bkfIncreaseBtn"
+            android:layout_toLeftOf="@id/lunchIncreaseBtn"
+            android:layout_toStartOf="@id/lunchIncreaseBtn"
             android:gravity="center"
             android:text="0"
             android:textColor="@color/colorBlack"
             android:textSize="15sp" />
 
         <Button
-            android:id="@+id/bkfDecreaseBtn"
+            android:id="@+id/lunchDecreaseBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_below="@id/bkfQuestion"
+            android:layout_below="@id/lunchQuestion"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="10dp"
-            android:layout_toLeftOf="@id/bkfCounterTextView"
-            android:layout_toStartOf="@id/bkfCounterTextView"
+            android:layout_toLeftOf="@id/lunchCounterTextView"
+            android:layout_toStartOf="@id/lunchCounterTextView"
             android:background="@color/colorGold"
             android:gravity="center"
             android:text="@string/decrease_button"

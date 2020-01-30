@@ -34,29 +34,28 @@
                 android:textColor="@color/colorWhite"
                 android:layout_alignParentStart="true" />
 
-                <Switch
-                    android:id="@+id/vegSwitch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@id/filterBtn"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_toStartOf="@id/filterBtn"
-                    android:layout_marginTop="8dp"
-                    android:switchPadding="5dp"
-                    android:text="@string/veg_switch" />
+            <Switch
+                android:id="@+id/vegSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/filterBtn"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@id/filterBtn"
+                android:layout_marginTop="8dp"
+                android:switchPadding="5dp"
+                android:text="@string/veg_switch" />
 
-                <ImageButton
-                    android:id="@+id/filterBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:clickable="true"
-                    app:srcCompat="@drawable/filter_icon" />
+            <ImageButton
+                android:id="@+id/filterBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/filter_icon" />
 
         </RelativeLayout>
 
@@ -86,41 +85,124 @@
         android:text="@string/calendar_instruction"
         android:textColor="@color/colorDarkGrey"/>
 
-    //Breakfast menu section
-    <TextView
-        android:id="@+id/bkfTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/calendarInstructionTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/bkf_text_view"
-        android:textColor="@color/colorBlack"
-        android:textSize="25sp"/>
-
-    <TextView
-        android:id="@+id/hideBkfTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/calendarInstructionTextView"
-        android:layout_marginStart="182dp"
-        android:layout_marginLeft="182dp"
-        android:layout_marginTop="25dp"
-        android:layout_toEndOf="@id/bkfTextView"
-        android:layout_toRightOf="@id/bkfTextView"
-        android:text="@string/hide_bkf_text_view"
-        android:textColor="@color/colorBlack"
-        android:textSize="15sp"
-        android:clickable="true"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bkfRecyclerView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/bkfTextView"
-        android:layout_margin="10dp"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/calendarInstructionTextView">
+
+        <RelativeLayout
+            android:id="@+id/menuRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            //Breakfast menu section
+            <TextView
+                android:id="@+id/bkfTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/bkf_text_view"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:id="@+id/hideBkfTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="182dp"
+                android:layout_marginLeft="182dp"
+                android:layout_marginTop="25dp"
+                android:layout_toEndOf="@id/bkfTextView"
+                android:layout_toRightOf="@id/bkfTextView"
+                android:text="@string/hide_bkf_text_view"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bkfRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bkfTextView"
+                android:layout_margin="10dp"/>
+
+            //Lunch menu section
+            <TextView
+                android:id="@+id/lunchTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/bkfRecyclerView"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/lunch_text_view"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:id="@+id/hideLunchTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bkfRecyclerView"
+                android:layout_marginStart="248dp"
+                android:layout_marginLeft="248dp"
+                android:layout_marginTop="25dp"
+                android:layout_toEndOf="@id/lunchTextView"
+                android:layout_toRightOf="@id/lunchTextView"
+                android:text="@string/hide_lunch_text_view"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lunchRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lunchTextView"
+                android:layout_margin="10dp"/>
+
+            //Dinner menu section
+            <TextView
+                android:id="@+id/dinnerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/lunchRecyclerView"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/dinner_text_view"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:id="@+id/hideDinnerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lunchRecyclerView"
+                android:layout_marginStart="241dp"
+                android:layout_marginLeft="241dp"
+                android:layout_marginTop="25dp"
+                android:layout_toEndOf="@id/dinnerTextView"
+                android:layout_toRightOf="@id/dinnerTextView"
+                android:text="@string/hide_dinner_text_view"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dinnerRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dinnerTextView"
+                android:layout_margin="10dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

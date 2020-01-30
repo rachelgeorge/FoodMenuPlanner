@@ -5,17 +5,15 @@
     <string name="calendar_instruction">Swipe left for more dates</string>
     <string name="bkf_text_view">Breakfast</string>
     <string name="hide_bkf_text_view">Hide Breakfast</string>
-    <string name="bkf_question">How many eating?</string>
-    <string name="bkf_checkbox">Add to List</string>
+    <string name="question">How many eating?</string>
+    <string name="checkbox">Add to List</string>
     <string name="increase_button">+</string>
     <string name="decrease_button">-</string>
-
-    <string-array name="breakfast_meals">
-        <item>Scrambled eggs</item>
-        <item>Aloo Paratha</item>
-    </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lunch_text_view">Lunch</string>
+    <string name="hide_lunch_text_view">Hide Lunch</string>
+    <string name="dinner_text_view">Dinner</string>
+    <string name="hide_dinner_text_view">Hide Dinner</string>
+    <string name="ing_menu_navigation">Back to Menu</string>
+    <string name="ing_text_view">Ingredients</string>
 
 </resources>

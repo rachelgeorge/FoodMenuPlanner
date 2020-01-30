@@ -7,7 +7,6 @@
     android:background="@color/colorLightGrey"
     tools:context=".ShoppingListActivity">
 
-    //toolbar on top
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/appToolbar"
         android:layout_width="match_parent"
@@ -55,19 +54,150 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
-                android:clickable="true"
                 app:srcCompat="@drawable/filter_icon" />
 
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/placeholder"
+    <ImageView
+        android:id="@+id/ingNavBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/appToolbar"
-        android:text="INGREDIENTS PAGE"
-        android:textSize="40sp"/>
+        android:src="@drawable/ic_arrow_left" />
+
+    <TextView
+        android:id="@+id/ingMenuNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appToolbar"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/ingNavBtn"
+        android:layout_toRightOf="@id/ingNavBtn"
+        android:text="@string/ing_menu_navigation"
+        android:textColor="@color/colorPurple"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:id="@+id/ingredientsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/ingNavBtn"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/ingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/ing_text_view"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/menuItemTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ingTextView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Menu Item"
+            android:textColor="@color/colorBlack"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/ingListTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menuItemTextView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Ingredients List"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/ingQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ingListTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/question"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/ingCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ingQuestion"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/checkbox"
+            android:textSize="15sp"
+            android:textColor="@color/colorDarkGrey"/>
+
+        <Button
+            android:id="@+id/ingIncreaseBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/ingQuestion"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorGold"
+            android:gravity="center"
+            android:text="@string/increase_button"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/ingCounterTextView"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/ingQuestion"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/ingIncreaseBtn"
+            android:layout_toStartOf="@id/ingIncreaseBtn"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/ingDecreaseBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/ingQuestion"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/ingCounterTextView"
+            android:layout_toStartOf="@id/ingCounterTextView"
+            android:background="@color/colorGold"
+            android:gravity="center"
+            android:text="@string/decrease_button"
+            android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

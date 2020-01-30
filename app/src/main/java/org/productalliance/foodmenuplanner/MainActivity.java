@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView bkfRecyclerView;
     private BreakfastMenuAdapter bkfAdapter;
     private RecyclerView.LayoutManager bkfLayoutManager;
+    private RecyclerView lunchRecyclerView;
+    private LunchMenuAdapter lunchAdapter;
+    private RecyclerView.LayoutManager lunchLayoutManager;
+    private RecyclerView dinnerRecyclerView;
+    private DinnerMenuAdapter dinnerAdapter;
+    private RecyclerView.LayoutManager dinnerLayoutManager;
 
 
     @Override
@@ -68,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //BREAKFAST SECTION
         //create an array list of custom breakfast menu objects
         //each card is a custom breakfast menu object
         ArrayList<BreakfastMenu> breakfastList = new ArrayList<>();
@@ -75,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         //dummy code until menu database is set up
         breakfastList.add(new BreakfastMenu("Scrambled Eggs, Toast, Chicken Sausages, Apples"));
         breakfastList.add(new BreakfastMenu("Aloo Paratha, Mint Chutney, Dahi, Oranges"));
+        breakfastList.add(new BreakfastMenu("Scrambled Eggs, Toast, Chicken Sausages, Apples"));
 
         bkfRecyclerView = findViewById(R.id.bkfRecyclerView);
         bkfLayoutManager = new LinearLayoutManager(this);
@@ -98,11 +107,85 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (bkfRecyclerView.getVisibility() == View.VISIBLE) {
-                    bkfRecyclerView.setVisibility(View.INVISIBLE);
+                    bkfRecyclerView.setVisibility(View.GONE);
                     hideBkfTextView.setText("Show Breakfast");
                 } else {
                     bkfRecyclerView.setVisibility(View.VISIBLE);
                     hideBkfTextView.setText("Hide Breakfast");
+                }
+
+            }
+        });
+
+        //LUNCH SECTION
+        ArrayList<LunchMenu> lunchList = new ArrayList<>();
+        lunchList.add(new LunchMenu("Rice, Dal Fry, Green Beans Masala, Chicken Dry Fry"));
+        lunchList.add(new LunchMenu("Aloo Paratha, Mint Chutney, Dahi, Oranges"));
+
+        lunchRecyclerView = findViewById(R.id.lunchRecyclerView);
+        lunchLayoutManager = new LinearLayoutManager(this);
+        lunchAdapter = new LunchMenuAdapter(lunchList);
+
+        lunchRecyclerView.setLayoutManager(lunchLayoutManager);
+        lunchRecyclerView.setAdapter(lunchAdapter);
+
+        lunchAdapter.setOnItemClickListener(new LunchMenuAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(int position) {
+                Intent intent = new Intent(MainActivity.this, IngredientsActivity.class);
+                startActivity(intent);
+                //modify method to take intent info and populate ingredients page
+            }
+        });
+
+        lunchRecyclerView.setVisibility(View.VISIBLE);
+        final TextView hideLunchTextView = findViewById(R.id.hideLunchTextView);
+        hideLunchTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lunchRecyclerView.getVisibility() == View.VISIBLE) {
+                    lunchRecyclerView.setVisibility(View.GONE);
+                    hideLunchTextView.setText("Show Lunch");
+                } else {
+                    lunchRecyclerView.setVisibility(View.VISIBLE);
+                    hideLunchTextView.setText("Hide Lunch");
+                }
+
+            }
+        });
+
+        //DINNER SECTION
+        ArrayList<DinnerMenu> dinnerList = new ArrayList<>();
+        dinnerList.add(new DinnerMenu("Rice, Dal Fry, Green Beans Masala, Chicken Dry Fry"));
+        dinnerList.add(new DinnerMenu("Aloo Paratha, Mint Chutney, Dahi, Oranges"));
+
+        dinnerRecyclerView = findViewById(R.id.dinnerRecyclerView);
+        dinnerLayoutManager = new LinearLayoutManager(this);
+        dinnerAdapter = new DinnerMenuAdapter(dinnerList);
+
+        dinnerRecyclerView.setLayoutManager(dinnerLayoutManager);
+        dinnerRecyclerView.setAdapter(dinnerAdapter);
+
+        dinnerAdapter.setOnItemClickListener(new DinnerMenuAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(int position) {
+                Intent intent = new Intent(MainActivity.this, IngredientsActivity.class);
+                startActivity(intent);
+                //modify method to take intent info and populate ingredients page
+            }
+        });
+
+        dinnerRecyclerView.setVisibility(View.VISIBLE);
+        final TextView hideDinnerTextView = findViewById(R.id.hideDinnerTextView);
+        hideDinnerTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dinnerRecyclerView.getVisibility() == View.VISIBLE) {
+                    dinnerRecyclerView.setVisibility(View.GONE);
+                    hideDinnerTextView.setText("Show Dinner");
+                } else {
+                    dinnerRecyclerView.setVisibility(View.VISIBLE);
+                    hideDinnerTextView.setText("Hide Dinner");
                 }
 
             }
