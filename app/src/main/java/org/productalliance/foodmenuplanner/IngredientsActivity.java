@@ -30,7 +30,7 @@ public class IngredientsActivity extends AppCompatActivity {
     private int mInteger = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredients);
 
@@ -55,8 +55,16 @@ public class IngredientsActivity extends AppCompatActivity {
         shoppingListBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IngredientsActivity.this, ShoppingListActivity.class);
-                startActivity(intent);
+                Intent shoppingIntent = new Intent(IngredientsActivity.this, ShoppingListActivity.class);
+                startActivity(shoppingIntent);
+            }
+        });
+
+        filterBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent filterIntent = new Intent(IngredientsActivity.this, FilterActivity.class);
+                startActivity(filterIntent);
             }
         });
 

@@ -3,6 +3,7 @@ package org.productalliance.foodmenuplanner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Switch;
@@ -47,13 +48,25 @@ public class MainActivity extends AppCompatActivity {
         vegSwitch = findViewById(R.id.vegSwitch);
         filterBtn = findViewById(R.id.filterBtn);
 
-        shoppingListBtn.setOnClickListener(new View.OnClickListener() {
+        shoppingListBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShoppingListActivity.class);
-                startActivity(intent);
+                Intent shoppingIntent = new Intent(MainActivity.this, ShoppingListActivity.class);
+                startActivity(shoppingIntent);
             }
         });
+
+        //filter method for veg switch
+        //show only veg menu items
+
+        filterBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent filterIntent = new Intent(MainActivity.this, FilterActivity.class);
+                startActivity(filterIntent);
+            }
+        });
+        
 
         //horizontal calendar section
         Calendar startDate = Calendar.getInstance();
@@ -190,11 +203,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-                //filter method for veg switch
-                //show only veg menu items
-
-                //method for filter button
-                //show only items not containing filter choices
 
     }
 }

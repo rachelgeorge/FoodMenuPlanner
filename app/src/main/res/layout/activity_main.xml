@@ -7,7 +7,6 @@
     android:background="@color/colorLightGrey"
     tools:context=".MainActivity">
 
-    //toolbar on top
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/appToolbar"
         android:layout_width="match_parent"

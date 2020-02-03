@@ -131,8 +131,6 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
 
     }
 
-    //SetOnClickListener methods for counters
-
     public BreakfastMenuAdapter(ArrayList<BreakfastMenu> breakfastList) {
         mBreakfastList = breakfastList;
     }
