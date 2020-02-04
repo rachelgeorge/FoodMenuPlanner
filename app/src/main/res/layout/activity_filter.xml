@@ -54,7 +54,8 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
-                app:srcCompat="@drawable/filter_icon" />
+                app:srcCompat="@drawable/filter_icon"
+                tools:ignore="ContentDescription" />
 
         </RelativeLayout>
 
@@ -62,7 +63,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/appToolbar"
         android:background="@color/colorWhite">
 
@@ -73,8 +74,10 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/ic_close" />
+            android:src="@drawable/ic_close"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/filterTextView"
@@ -85,12 +88,15 @@
             android:textColor="@color/colorBlack"
             android:textSize="25sp"
             android:layout_margin="10dp"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="10dp"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:paddingEnd="10dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/filterRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:layout_below="@id/filterTextView"/>
 
         <Button
@@ -112,7 +118,6 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="20dp"
             android:background="@color/colorOrange"
             android:text="@string/remove_filter_button"
             android:textSize="15sp"

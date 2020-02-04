@@ -19,7 +19,6 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
     //variables
     private ArrayList<BreakfastMenu> mBreakfastList;
     private OnItemClickListener bkfListener;
-    private final int limit = 2;
 
     //get the info from the array list (in Main Activity) to put into the adapter
     //pass it into the constructor for the adapter
@@ -110,8 +109,7 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
             bkfIncreaseBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mInteger = mInteger + 1;
-                    bkfCounterTextView.setText("" + mInteger);
+                    bkfCounterTextView.setText(String.valueOf(++mInteger));
                 }
             });
 
@@ -119,10 +117,9 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
                 @Override
                 public void onClick(View v) {
                     if (mInteger > 0) {
-                        mInteger = mInteger - 1;
-                        bkfCounterTextView.setText("" + mInteger);
+                        bkfCounterTextView.setText(String.valueOf(--mInteger));
                     } else {
-                        bkfCounterTextView.setText("" + 0);
+                        bkfCounterTextView.setText(String.valueOf(mInteger));
                     }
                 }
             });
@@ -150,6 +147,7 @@ public class BreakfastMenuAdapter extends RecyclerView.Adapter<BreakfastMenuAdap
 
     @Override
     public int getItemCount() {
+        final int limit = 2;
         if (mBreakfastList.size() > limit) {
             return limit; /* so only 2 options show per card */
         } else {

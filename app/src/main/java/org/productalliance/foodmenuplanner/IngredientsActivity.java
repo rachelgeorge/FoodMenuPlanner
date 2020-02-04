@@ -8,18 +8,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 public class IngredientsActivity extends AppCompatActivity {
 
     private Button shoppingListBtn;
-    private Switch vegSwitch;
-    private ImageButton filterBtn;
-    private ImageView ingNavBtn;
-    private TextView ingMenuNav;
+    private ImageView NavBtn;
+    private TextView MenuNav;
     private TextView menuItemTextView;
     private TextView ingListTextView;
     private TextView ingQuestion;
@@ -35,10 +31,8 @@ public class IngredientsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ingredients);
 
         shoppingListBtn = findViewById(R.id.shoppingListBtn);
-        vegSwitch = findViewById(R.id.vegSwitch);
-        filterBtn = findViewById(R.id.filterBtn);
-        ingNavBtn = findViewById(R.id.ingNavBtn);
-        ingMenuNav = findViewById(R.id.ingMenuNav);
+        NavBtn = findViewById(R.id.NavBtn);
+        MenuNav = findViewById(R.id.MenuNav);
         menuItemTextView = findViewById(R.id.menuItemTextView);
         ingListTextView = findViewById(R.id.ingListTextView);
         ingQuestion = findViewById(R.id.ingQuestion);
@@ -60,18 +54,7 @@ public class IngredientsActivity extends AppCompatActivity {
             }
         });
 
-        filterBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent filterIntent = new Intent(IngredientsActivity.this, FilterActivity.class);
-                startActivity(filterIntent);
-            }
-        });
-
-        //write code for veg switch
-        //write code for filter
-
-        ingNavBtn.setOnClickListener(new OnClickListener() {
+        NavBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(IngredientsActivity.this, MainActivity.class);
@@ -79,7 +62,7 @@ public class IngredientsActivity extends AppCompatActivity {
             }
         });
 
-        ingMenuNav.setOnClickListener(new OnClickListener() {
+        MenuNav.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(IngredientsActivity.this, MainActivity.class);
@@ -112,8 +95,7 @@ public class IngredientsActivity extends AppCompatActivity {
         ingIncreaseBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mInteger = mInteger + 1;
-                ingCounterTextView.setText("" + mInteger);
+                ingCounterTextView.setText(String.valueOf(++mInteger));
             }
         });
 
@@ -121,10 +103,9 @@ public class IngredientsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mInteger > 0) {
-                    mInteger = mInteger - 1;
-                    ingCounterTextView.setText("" + mInteger);
+                    ingCounterTextView.setText(String.valueOf(--mInteger));
                 } else {
-                    ingCounterTextView.setText("" + 0);
+                    ingCounterTextView.setText(String.valueOf(mInteger));
                 }
             }
         });

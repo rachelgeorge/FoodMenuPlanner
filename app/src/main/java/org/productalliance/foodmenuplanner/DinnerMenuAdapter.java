@@ -18,7 +18,6 @@ public class DinnerMenuAdapter extends RecyclerView.Adapter<DinnerMenuAdapter.Di
     //variables
     private ArrayList<DinnerMenu> mDinnerList;
     private OnItemClickListener dinnerListener;
-    private final int limit = 2;
 
     //get the info from the array list (in Main Activity) to put into the adapter
     //pass it into the constructor for the adapter
@@ -109,8 +108,7 @@ public class DinnerMenuAdapter extends RecyclerView.Adapter<DinnerMenuAdapter.Di
             dinnerIncreaseBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mInteger = mInteger + 1;
-                    dinnerCounterTextView.setText("" + mInteger);
+                    dinnerCounterTextView.setText(String.valueOf(++mInteger));
                 }
             });
 
@@ -118,10 +116,9 @@ public class DinnerMenuAdapter extends RecyclerView.Adapter<DinnerMenuAdapter.Di
                 @Override
                 public void onClick(View v) {
                     if (mInteger > 0) {
-                        mInteger = mInteger - 1;
-                        dinnerCounterTextView.setText("" + mInteger);
+                        dinnerCounterTextView.setText(String.valueOf(--mInteger));
                     } else {
-                        dinnerCounterTextView.setText("" + 0);
+                        dinnerCounterTextView.setText(String.valueOf(mInteger));
                     }
                 }
             });
@@ -151,6 +148,7 @@ public class DinnerMenuAdapter extends RecyclerView.Adapter<DinnerMenuAdapter.Di
 
     @Override
     public int getItemCount() {
+        final int limit = 2;
         if (mDinnerList.size() > limit) {
             return limit;
         } else {

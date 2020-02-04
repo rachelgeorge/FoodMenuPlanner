@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="15dp">
@@ -26,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/lunchMenu"
             android:layout_toRightOf="@id/lunchMenu"
-            android:src="@drawable/ic_arrow_right"/>
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/lunchQuestion"
@@ -84,7 +86,7 @@
             android:layout_toLeftOf="@id/lunchIncreaseBtn"
             android:layout_toStartOf="@id/lunchIncreaseBtn"
             android:gravity="center"
-            android:text="0"
+            android:text="@string/integer_text_view"
             android:textColor="@color/colorBlack"
             android:textSize="15sp" />
 

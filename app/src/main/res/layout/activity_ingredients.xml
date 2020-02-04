@@ -1,96 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightGrey"
     tools:context=".ShoppingListActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/appToolbar"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:background="@color/colorWhite">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/appToolbar"
-            android:paddingTop="10dp"
-            android:orientation="horizontal">
+        <Button
+            android:id="@+id/shoppingListBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/shopping_list_button"
+            android:textColor="@color/colorWhite"/>
 
-            <Button
-                android:id="@+id/shoppingListBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginBottom="10dp"
-                android:background="@color/colorPrimary"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="@string/shopping_list_button"
-                android:textColor="@color/colorWhite"
-                android:layout_alignParentStart="true" />
-
-            <Switch
-                android:id="@+id/vegSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/filterBtn"
-                android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@id/filterBtn"
-                android:layout_marginTop="8dp"
-                android:switchPadding="5dp"
-                android:text="@string/veg_switch" />
-
-            <ImageButton
-                android:id="@+id/filterBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"
-                app:srcCompat="@drawable/filter_icon" />
-
-        </RelativeLayout>
-
-    </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/ingNavBtn"
+        android:id="@+id/NavBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/appToolbar"
-        android:src="@drawable/ic_arrow_left" />
+        android:layout_below="@id/linearLayout"
+        android:src="@drawable/ic_arrow_left"
+        tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/ingMenuNav"
+        android:id="@+id/MenuNav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/appToolbar"
+        android:layout_below="@id/linearLayout"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_toEndOf="@id/ingNavBtn"
-        android:layout_toRightOf="@id/ingNavBtn"
-        android:text="@string/ing_menu_navigation"
+        android:layout_toEndOf="@id/NavBtn"
+        android:layout_toRightOf="@id/NavBtn"
+        android:text="@string/menu_navigation"
         android:textColor="@color/colorPurple"
-        android:textSize="15sp" />
+        android:textSize="18sp" />
 
     <RelativeLayout
-        android:id="@+id/ingredientsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_below="@id/ingNavBtn"
+        android:layout_below="@id/NavBtn"
         android:background="@color/colorWhite">
 
         <TextView
@@ -180,7 +146,7 @@
             android:layout_toLeftOf="@id/ingIncreaseBtn"
             android:layout_toStartOf="@id/ingIncreaseBtn"
             android:gravity="center"
-            android:text="0"
+            android:text="@string/integer_text_view"
             android:textColor="@color/colorBlack"
             android:textSize="15sp" />
 

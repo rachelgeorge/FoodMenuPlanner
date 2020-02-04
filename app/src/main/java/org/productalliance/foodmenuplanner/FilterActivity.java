@@ -9,11 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Filter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -46,6 +44,22 @@ public class FilterActivity extends AppCompatActivity {
                 startActivity(shoppingIntent);
             }
         });
+
+        vegSwitch.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean on = ((Switch) v).isChecked();
+                if (on) {
+                    //select all non-veg items in filter list
+                } else {
+                    //select only those items that user clicks on
+                }
+            }
+        });
+
+        //if switch is toggled from home page, it has to be toggled in filter page too
+        //code to auto-select all non-veg items in filter if switch is toggled from Main Activity
+        //code to detect switch state
 
         closeFilterBtn.setOnClickListener(new OnClickListener() {
             @Override

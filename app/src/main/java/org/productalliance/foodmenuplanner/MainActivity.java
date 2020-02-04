@@ -17,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
+import devs.mulham.horizontalcalendar.HorizontalCalendarView;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,8 +57,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //filter method for veg switch
-        //show only veg menu items
+        vegSwitch.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean on = ((Switch) v).isChecked();
+                if (on) {
+                    //show only veg items
+                } else {
+                    //show all items
+                }
+            }
+        });
 
         filterBtn.setOnClickListener(new OnClickListener() {
             @Override
@@ -84,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDateSelected(Calendar date, int position) {
                 //method to call matching menus
+            }
+
+            public void onCalendarScroll(HorizontalCalendarView calendarView, int dx, int dy) {
+                //do something
             }
         });
 

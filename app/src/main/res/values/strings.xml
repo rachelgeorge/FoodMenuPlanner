@@ -9,14 +9,18 @@
     <string name="checkbox">Add to List</string>
     <string name="increase_button">+</string>
     <string name="decrease_button">-</string>
+    <string name="integer_text_view">0</string>
     <string name="lunch_text_view">Lunch</string>
     <string name="hide_lunch_text_view">Hide Lunch</string>
     <string name="dinner_text_view">Dinner</string>
     <string name="hide_dinner_text_view">Hide Dinner</string>
-    <string name="ing_menu_navigation">Back to Menu</string>
+    <string name="menu_navigation">Back to Menu</string>
     <string name="ing_text_view">Ingredients</string>
     <string name="filter_text">Does not Contain:</string>
     <string name="apply_filter_button">Apply Filters</string>
     <string name="remove_filter_button">Remove Filters</string>
+    <string name="shopping_list_timeline">Show list for following no. of days</string>
+    <string name="shopping_list_text_view">Shopping List</string>
+    <string name="shopping_instruction">Remove items from shopping list by checking</string>
 
 </resources>

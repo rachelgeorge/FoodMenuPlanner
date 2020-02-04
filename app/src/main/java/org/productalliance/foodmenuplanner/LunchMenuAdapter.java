@@ -18,7 +18,6 @@ public class LunchMenuAdapter extends RecyclerView.Adapter<LunchMenuAdapter.Lunc
     //variables
     private ArrayList<LunchMenu> mLunchList;
     private OnItemClickListener lunchListener;
-    private final int limit = 2;
 
     //get the info from the array list (in Main Activity) to put into the adapter
     //pass it into the constructor for the adapter
@@ -109,8 +108,7 @@ public class LunchMenuAdapter extends RecyclerView.Adapter<LunchMenuAdapter.Lunc
             lunchIncreaseBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mInteger = mInteger + 1;
-                    lunchCounterTextView.setText("" + mInteger);
+                    lunchCounterTextView.setText(String.valueOf(++mInteger));
                 }
             });
 
@@ -118,10 +116,9 @@ public class LunchMenuAdapter extends RecyclerView.Adapter<LunchMenuAdapter.Lunc
                 @Override
                 public void onClick(View v) {
                     if (mInteger > 0) {
-                        mInteger = mInteger - 1;
-                        lunchCounterTextView.setText("" + mInteger);
+                        lunchCounterTextView.setText(String.valueOf(--mInteger));
                     } else {
-                        lunchCounterTextView.setText("" + 0);
+                        lunchCounterTextView.setText(String.valueOf(mInteger));
                     }
                 }
             });
@@ -151,6 +148,7 @@ public class LunchMenuAdapter extends RecyclerView.Adapter<LunchMenuAdapter.Lunc
 
     @Override
     public int getItemCount() {
+        final int limit = 2;
         if (mLunchList.size() > limit) {
             return limit;
         } else {
