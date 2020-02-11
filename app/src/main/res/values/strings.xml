@@ -21,6 +21,6 @@
     <string name="remove_filter_button">Remove Filters</string>
     <string name="shopping_list_timeline">Show list for following no. of days</string>
     <string name="shopping_list_text_view">Shopping List</string>
-    <string name="shopping_instruction">Remove items from shopping list by checking</string>
+    <string name="shopping_instruction">Remove items from shopping list by checking box</string>
 
 </resources>

@@ -1,72 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightGrey"
     tools:context=".ShoppingListActivity">
 
-    //toolbar on top
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/appToolbar"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:background="@color/colorWhite">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/appToolbar"
-            android:paddingTop="10dp"
-            android:orientation="horizontal">
+        <Button
+            android:id="@+id/shoppingListBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorDarkGrey"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/shopping_list_button"
+            android:textColor="@color/colorWhite" />
 
-            <Button
-                android:id="@+id/shoppingListBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginBottom="10dp"
-                android:background="@color/colorPrimary"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="@string/shopping_list_button"
-                android:textColor="@color/colorWhite"
-                android:layout_alignParentStart="true" />
+    </LinearLayout>
 
-            <Switch
-                android:id="@+id/vegSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/filterBtn"
-                android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@id/filterBtn"
-                android:layout_marginTop="8dp"
-                android:switchPadding="5dp"
-                android:text="@string/veg_switch" />
-
-            <ImageButton
-                android:id="@+id/filterBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"
-                app:srcCompat="@drawable/filter_icon" />
-
-        </RelativeLayout>
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <TextView
-        android:id="@+id/placeholder"
+    <ImageView
+        android:id="@+id/NavBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/appToolbar"
-        android:text="SHOPPING LIST PAGE"
-        android:textSize="40sp"/>
+        android:layout_below="@id/linearLayout"
+        android:src="@drawable/ic_arrow_left"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/MenuNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/NavBtn"
+        android:layout_toRightOf="@id/NavBtn"
+        android:text="@string/menu_navigation"
+        android:textColor="@color/colorPurple"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/MenuNav"
+        android:background="@color/colorWhite"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/shoppingQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/shopping_list_timeline"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/shoppingDecreaseBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@id/shoppingCounterTextView"
+            android:layout_toLeftOf="@id/shoppingCounterTextView"
+            android:background="@color/colorGold"
+            android:gravity="center"
+            android:text="@string/decrease_button"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/shoppingIncreaseBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorGold"
+            android:gravity="center"
+            android:text="@string/increase_button"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/shoppingCounterTextView"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@id/shoppingIncreaseBtn"
+            android:layout_toLeftOf="@id/shoppingIncreaseBtn"
+            android:gravity="center"
+            android:text="@string/integer_text_view"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/shoppingListTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shoppingIncreaseBtn"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/shopping_list_text_view"
+            android:textSize="25sp"
+            android:textColor="@color/colorBlack"/>
+
+        <TextView
+            android:id="@+id/shoppingInstructionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shoppingListTextView"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/shopping_instruction"
+            android:textSize="15sp"
+            android:textColor="@color/colorDarkGrey"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shoppingListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shoppingInstructionTextView"
+            android:layout_margin="10dp"/>
+
+
+    </RelativeLayout>
 
 </RelativeLayout>
