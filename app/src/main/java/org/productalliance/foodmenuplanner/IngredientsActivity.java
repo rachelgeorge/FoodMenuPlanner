@@ -18,6 +18,7 @@ public class IngredientsActivity extends AppCompatActivity {
     private TextView MenuNav;
     private TextView menuItemTextView;
     private TextView ingListTextView;
+    private TextView servingNumberTextView;
     private TextView ingQuestion;
     private CheckBox ingCheckBox;
     private Button ingIncreaseBtn;
@@ -35,6 +36,7 @@ public class IngredientsActivity extends AppCompatActivity {
         MenuNav = findViewById(R.id.MenuNav);
         menuItemTextView = findViewById(R.id.menuItemTextView);
         ingListTextView = findViewById(R.id.ingListTextView);
+        servingNumberTextView = findViewById(R.id.servingNumberTextView);
         ingQuestion = findViewById(R.id.ingQuestion);
         ingCheckBox = findViewById(R.id.ingCheckBox);
         ingIncreaseBtn = findViewById(R.id.ingIncreaseBtn);

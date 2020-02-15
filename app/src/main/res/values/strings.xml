@@ -16,6 +16,7 @@
     <string name="hide_dinner_text_view">Hide Dinner</string>
     <string name="menu_navigation">Back to Menu</string>
     <string name="ing_text_view">Ingredients</string>
+    <string name="serving_size_text_view">Serving Size:</string>
     <string name="filter_text">Does not Contain:</string>
     <string name="apply_filter_button">Apply Filters</string>
     <string name="remove_filter_button">Remove Filters</string>
